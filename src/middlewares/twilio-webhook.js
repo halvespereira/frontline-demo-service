@@ -1,6 +1,7 @@
-const twilio = require('twilio');
-const config = require('../config');
+const twilio = require("twilio");
+const config = require("../config");
 
-const twilioWebhookMiddleware = twilio.webhook(config.twilio.auth_token);
+const twilioFrontlineWebhookMiddleware = twilio.webhook(config.twilio.frontline_auth_token);
+const twilioFlexWebhookMiddleware = twilio.webhook(config.twilio.flex_auth_token);
 
-module.exports = twilioWebhookMiddleware;
+module.exports = { twilioFrontlineWebhookMiddleware, twilioFlexWebhookMiddleware };
